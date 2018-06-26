@@ -5,6 +5,7 @@ import android.support.v7.widget.AppCompatButton;
 
 public class OthelloButton extends AppCompatButton {
     private int player;
+    public boolean isShowingMove=false;
     public int getPlayer() {
         return player;
     }
@@ -17,6 +18,9 @@ public class OthelloButton extends AppCompatButton {
         else if(player==0)
             setSilver();
     }
+    public int clickable=0;
+    public int x;
+    public int y;
 
     public OthelloButton(Context context) {
         super(context);
@@ -24,8 +28,6 @@ public class OthelloButton extends AppCompatButton {
         player = -1;
         setBackgroundDrawable(getResources().getDrawable(R.drawable.greenbutton,null));
     }
-
-
     public void setBlack(){
         setBackgroundDrawable(getResources().getDrawable(R.drawable.black_button,null));
     }
@@ -34,5 +36,14 @@ public class OthelloButton extends AppCompatButton {
     }
     public void setSilver(){
         setBackgroundDrawable(getResources().getDrawable(R.drawable.moves_available_button,null));
+        isShowingMove=true;
+    }
+    public void unsetSilver(){
+        setBackgroundDrawable(getResources().getDrawable(R.drawable.greenbutton,null));
+        isShowingMove=false;
+    }
+    public void setCoordinat(int i, int j) {
+        x=i;
+        y=j;
     }
 }
