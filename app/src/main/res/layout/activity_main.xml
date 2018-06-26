@@ -6,21 +6,72 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/rootLayout"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#090808">
 
     <LinearLayout
         android:id="@+id/boardLayout"
+        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="370dp"
         android:orientation="vertical">
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/currentMove"-->
-        <!--android:android:textSize="30dp"/>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentMove"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:text="Player 1 (Black)\n Move"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="#efd4d4"
+            android:textAlignment="center"
+            android:background="#0d4702"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:id="@+id/blackCount"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#ffff"
+                android:textSize="30sp"
+                android:paddingBottom="5dp"
+                android:gravity="center_vertical"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
+
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:id="@+id/whiteCount"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:paddingBottom="5dp"
+                android:gravity="center_vertical"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 
 </LinearLayout>
