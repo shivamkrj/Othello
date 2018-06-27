@@ -3,6 +3,8 @@ package com.example.shivamkumar.othello;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,12 +38,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         blackCount=findViewById(R.id.blackCount);
         whiteCount=findViewById(R.id.whiteCount);
         setBoard();
-       showMoves();
-
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.reset,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id=item.getItemId();
+        if(id==R.id.reset){
+            setBoard();
+            showMoves();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void setBoard(){
 
+        textViewMove.setText("Player 1 (Black)\n Move");
         rootLayout = (LinearLayout)findViewById(R.id.boardLayout);
+        rootLayout.removeAllViews();
         board= new OthelloButton[rows.length][rows.length];
 
         for(int i=0;i<8;i++){
@@ -364,11 +384,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         countPieces();
         if(countWhite<countBlack){
             Toast.makeText(this,"Player 1 (Black) Wins",Toast.LENGTH_LONG).show();
+            textViewMove.setText("Player 1 (Black)\nWins");
         }else if(countBlack<countWhite)
+        {
             Toast.makeText(this,"Player 2 (White) Wins",Toast.LENGTH_LONG).show();
+            textViewMove.setText("Player 2 (White)\nWins");
+        }
         else
             Toast.makeText(this,"Draw",Toast.LENGTH_LONG).show();
         flagWin=true;
+
     }
     private void gamePlay(int i, int j) {
         int rMove=reverseMove();

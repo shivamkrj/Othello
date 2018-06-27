@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="4dp"
+    android:paddingLeft="4dp"
+    android:paddingTop="4dp"
+    android:paddingRight="4dp">
 
-    <item android:drawable="@drawable/greenbutton"/>
+    <item android:drawable="@drawable/greenbutton" />
     <item android:drawable="@drawable/black_dot"/>
 
 </layer-list>
