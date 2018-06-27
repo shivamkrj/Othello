@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<padding android:bottom="2dp"/>
+<padding android:left="2dp"/>
+<padding android:right="2dp"/>
+<padding android:top="2dp"/>
 
     <item android:drawable="@drawable/greenbutton"
         />
